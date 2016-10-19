@@ -1,0 +1,122 @@
+
+    {% load staticfiles %}
+    <footer id="footer">
+
+
+
+		<div class="container">
+   <div class="row">
+  <div class="footerbottom">
+    <div class="col-md-3 col-sm-6">
+      <div class="footerwidget">
+        <h4>
+           Programming
+        </h4>
+        <div class="menu-course">
+          <ul class="menu">
+            <li>
+                <a target="_blank" href='http://netty.io/'>Netty</a>
+            </li>
+            <li>
+                <a target="_blank" href='http://www.unpbook.com/src.html'>UNIX</a>
+            </li>
+            <li>
+                <a target="_blank" href='http://libev.schmorp.de/'>LIBEV</a>
+            </li>
+            <li>
+                <a target="_blank" href='http://nginx.org/'>nginx</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6">
+      <div class="footerwidget">
+        <h4>
+          Security
+        </h4>
+        <div class="menu-course">
+          <ul class="menu">
+            <li>
+                <a target="_blank" href='http://www.internetsociety.org/events/ndss-symposium'>NDSS</a>
+            </li>
+            <li>
+                <a target="_blank" href='http://www.ietf.org/'>IETF</a>
+            </li>
+            <li>
+                <a target="_blank" href='https://www.usenix.org/'>USENIX</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6">
+      <div class="footerwidget">
+        <h4>
+          HDU
+        </h4>
+        <div class="menu-course">
+          <ul class="menu">
+            <li><a target="_blank" href='http://www.hdu.edu.cn/'>HDU.Home</a>
+            </li>
+            <li>
+                <a target="_blank"  href='http://cbs.hdu.edu.cn/' >HDU.CBS</a>
+            </li>
+            <li>
+                <a target="_blank"  href='http://acm.hdu.edu.cn/' >HDU.ACM</a>
+            </li>
+              <li>
+                <a target="_blank" href='http://webmail.hdu.edu.cn/'>E-mail</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6">
+            	<div class="footerwidget">
+                         <h4>Contact</h4>
+                        <p>computer networks </p>
+            <div class="contact-info">
+            <i class="fa fa-map-marker"></i>The 2th Street of BaiYang - HangZhou<br>
+            <i class="fa fa-phone"></i>310018 <br>
+             <i class="fa fa-envelope-o"></i> hz_xuming(at)126(dot)com
+              </div>
+                </div><!-- end widget -->
+    </div>
+  </div>
+</div>
+
+			<div class="clear"></div>
+			<!--CLEAR FLOATS-->
+		</div>
+		<div class="footer2">
+			<div class="container">
+				<div class="row">
+
+					<div class="col-md-6 panel">
+						<div class="panel-body">
+							<p class="simplenav">
+                                <a href="{% url 'index' %}">首页</a> |
+                                <a href="{% url 'page-show' 'about' 'course' %}">课程介绍</a> |
+                   	            <a href="{% url 'page-list' 'news' %}">课程动态</a> |
+					            <a href="{% url 'page-list' 'course2016' %}">课程内容</a>
+
+{#								<a href="login">login</a> |#}
+
+							</p>
+						</div>
+					</div>
+
+					<div class="col-md-6 panel">
+						<div class="panel-body">
+							<p class="text-right">
+                                <a >开启程序人生 成就美好未来</a>
+							</p>
+						</div>
+					</div>
+
+				</div>
+				<!-- /row of panels -->
+			</div>
+		</div>
+	</footer>

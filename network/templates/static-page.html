@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="free-educational-responsive-web-template-webEdu">
+    <title>Computer networks</title>
+    {% load static %}
+    <link rel="favicon" href="{% static "images/favicon.png"%}">
+    <link rel="stylesheet" href="{% static "css/bootstrap.min.css"%}">
+    <link rel="stylesheet" href="{% static "css/font-awesome.min.css"%}">
+    <!-- Custom styles for our template -->
+    <link rel="stylesheet" href="{% static "css/bootstrap-theme.css"%}" media="screen">
+    <link rel="stylesheet" href="{% static "css/style.css"%}">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+	<script src="{% static "js/html5shiv.js"%}"></script>
+	<script src="{% static "css/style.css"%}""{% static "js/respond.min.js"%}"></script>
+	<![endif]-->
+</head>
+
+<body>
+    {% include 'navbar.html' %}
+
+ 	<header id="head" class="secondary">
+            <div class="container">
+                    <h1>{{ column.name }}</h1>
+                    <p>{{ column.intro }}</p>
+                </div>
+    </header>
+
+
+    <!-- container -->
+    <section class="container">
+        <div class="row">
+            <!-- main content -->
+            <section class="col-sm-8 maincontent">
+                <h3>{{ article.title }}</h3>
+                {{ article.content|safe }}
+            </section>
+            <!-- /main -->
+
+            <!-- Sidebar -->
+            <aside class="col-sm-4 sidebar sidebar-right">
+
+                <div class="panel">
+                    <h4>{{ column.name }}</h4>
+                    <ul class="list-unstyled list-spaces">
+                        {% for foo in articles %}
+                        <li><a href="{% url 'page-show' column.slug foo.slug %}">{{ foo.title }}</a><br> <span class="small text-muted"></span></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+
+            </aside>
+            <!-- /Sidebar -->
+
+        </div>
+    </section>
+    <!-- /container -->
+
+
+
+{% include 'footer.html' %}
+
+    <!-- JavaScript libs are placed at the end of the document so the pages load faster -->
+    <script type='text/javascript' src="{% static 'js/jquery.min.js'%}"></script>
+    <script src="{% static "js/bootstrap.min.js"%}"></script>
+    <script src="{% static "js/custom.js"%}"></script>
+</body>
+</html>

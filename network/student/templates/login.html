@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    {% load staticfiles %}
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>登陆</title>
+</head>
+
+
+<body bgcolor="#87cefa" >
+    <form method = 'post' enctype="multipart/form-data">
+        <center><h1>登录界面</h1> <hr> </center>
+        <br><br>
+
+<table width="650" height="360" background="{% static "images/1.jpg"%}" align="center" border="0"><tr><td>
+<table width="200" height="123" align="center" border="0">
+    {% csrf_token %}
+    {{uf.as_p}}
+    <tr>
+        <td colspan="2" align="center"><br>
+            <input  type="submit" value=" 登 录 " >
+            <input  type="button" value=" 退 出 " >
+        </td>
+    </tr>
+</table>
+</td>
+</tr>
+</table>
+</form>
+</body>
+</html>

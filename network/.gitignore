@@ -1,0 +1,9 @@
+*.py[cod]
+db.sqlite
+*$py.class
+*.log
+build/
+dist/
+MANIFEST
+*.egg-info
+

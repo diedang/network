@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Computer networks</title>
+    {% load staticfiles %}
+	<link rel="favicon" href="{% static "images/favicon.png"%}">
+{#	<link rel="stylesheet" media="screen" href="http://fonts.useso.com/css?family=Open+Sans:300,400,700">#}
+	<link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}">
+	<link rel="stylesheet" href="{% static "css/font-awesome.min.css"%}">
+	<link rel="stylesheet" href="{% static "css/bootstrap-theme.css"%}" media="screen">
+	<link rel="stylesheet" href="{% static "css/style.css"%}">
+    <link rel='stylesheet' id='camera-css'  href="{% static "css/camera.css" %}" type='text/css' media='all'>
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+	<script src="{% static "js/html5shiv.js"%}"></script>
+	<script src="{% static "js/respond.min.js"%}"></script>
+	<![endif]-->
+</head>
+<body>
+
+    {% include 'navbar.html' %}
+	<!-- Header -->
+	<header id="head">
+		<div class="container">
+             <div class="heading-text">							
+							<h1 class="animated flipInY delay1"><a href="{% url 'page-list' 'course2016' %}">Start Online Education</a></h1>
+{#							<p>.</p>#}
+						</div>
+            
+					<div class="fluid_container">                       
+                    <div class="camera_wrap camera_emboss pattern_1" id="camera_wrap_4">
+                        <div data-thumb="{% static "images/slides/thumbs/img1.jpg"%}" data-src="{% static "images/slides/img1.jpg"%}">
+                            <h2>We develop.</h2>
+                        </div> 
+                        <div data-thumb="{% static "images/slides/thumbs/img2.jpg"%}" data-src="{% static "images/slides/img2.jpg"%}">
+                        </div>
+                        <div data-thumb="{% static "images/slides/thumbs/img3.jpg"%}" data-src="{% static "images/slides/img3.jpg"%}">
+                        </div> 
+                    </div><!-- #camera_wrap_3 -->
+                </div><!-- .fluid_container -->
+		</div>
+	</header>
+	<!-- /Header -->
+
+	
+      <section class="container">
+      <div class="row">
+      	<div class="col-md-8"><div class="title-box clearfix "><h2 class="title-box_primary">课程简介</h2></div>
+            <p>{{ courseintro }}</p>
+        <a href="{% url 'page-show' 'about' 'course' %}" title="read more" class="btn-inline " target="_self">查看详细</a> </div>
+
+
+          <div class="col-md-4"><div class="title-box clearfix "><h2 class="title-box_primary">课程动态</h2></div>
+            <div class="list styled custom-list">
+            <ul>
+                {% for foo in news %}
+
+                
+            <li><a href="{% url 'page-show' 'news' foo.slug %}">{{ foo.title }}</a></li>
+
+                {% endfor %}
+            </ul>
+            </div>
+         </div>
+      </div>
+      </section>
+      
+{% include 'footer.html' %}
+
+	<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
+	<script src="{% static "js/modernizr-latest.js"%}"></script>
+	<script type='text/javascript' src="{% static 'js/jquery.min.js'%}"></script>
+    <script type='text/javascript' src="{% static 'js/fancybox/jquery.fancybox.pack.js'%}"></script>
+    
+    <script type='text/javascript' src="{% static 'js/jquery.mobile.customized.min.js'%}"></script>
+    <script type='text/javascript' src="{% static 'js/jquery.easing.1.3.js'%}"></script>
+    <script type='text/javascript' src="{% static 'js/camera.min.js'%}"></script>
+    <script src="{% static "js/bootstrap.min.js"%}"></script>
+	<script src="{% static "js/custom.js"%}"></script>
+    <script>
+		jQuery(function(){
+			
+			jQuery('#camera_wrap_4').camera({
+                transPeriod: 500,
+                time: 3000,
+				height: '600',
+				loader: 'false',
+				pagination: true,
+				thumbnails: false,
+				hover: false,
+                playPause: false,
+                navigation: false,
+				opacityOnGrid: false,
+				imagePath: "{% static 'images' %}/"
+			});
+
+		});
+      
+	</script>
+    
+</body>
+</html>
